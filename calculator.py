@@ -1,13 +1,12 @@
 # calculator.py 
-# description: See README.md
 # written by: Matthew Chute
-# last updated: May 29, 2019
+# last updated: October, 2019
 
 from tkinter import *
 
 class calculator:
 
-    #getInput()
+    # getInput()
     def getInput(self):
         """
         Takes all values from Entry and stores them into userInput.
@@ -15,7 +14,7 @@ class calculator:
         self.userInput = self.entry.get()
 
 
-    #clearInput()
+    # clearInput()
     def clearInput(self):
         """
         Clears the Entry.
@@ -23,7 +22,7 @@ class calculator:
         self.entry.delete(0, END)
 
 
-    #buttonPress()
+    # buttonPress()
     def buttonPress(self, argv):
         """
         Inserts the argument of the button into Entry.
@@ -31,7 +30,7 @@ class calculator:
         self.entry.insert(END, argv)
 
 
-    #evaluate()
+    # evaluate()
     def evaluate(self):
         """
         Uses eval() to evaluate the input.
@@ -54,88 +53,76 @@ class calculator:
             self.entry.insert(0, self.result)
 
 
-    #constructor()
+    # constructor()
     def __init__(self, gui):
 
-        #gui
+        # gui
         gui.title("")
         gui.geometry()
 
-        #Entry
+        # entry
         self.entry = Entry(gui, fg = "blue")
         self.entry.grid(row = 0, column = 0, columnspan = 4)
 
-        #Buttons
-        bAC = Button(gui, text = "AC", width = 17, height = 3, fg = "blue",
-        command = lambda: self.clearInput())
-        bAC.grid(row = 1, column = 0, columnspan = 3)
+        # buttons:
+        # first row 
+        buttonAC = Button(gui, text = "AC", width = 17, height = 3, fg = "blue", command = lambda: self.clearInput())
+        buttonAC.grid(row = 1, column = 0, columnspan = 3)
 
-        bDiv = Button(gui, text = "/", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("/"))
-        bDiv.grid(row = 1, column = 3)
+        buttonDiv = Button(gui, text = "/", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("/"))
+        buttonDiv.grid(row = 1, column = 3)
 
-        b7 = Button(gui, text = "7", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("7"))
-        b7.grid(row = 2, column = 0)
+        # second row
+        button7 = Button(gui, text = "7", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("7"))
+        button7.grid(row = 2, column = 0)
 
-        b8 = Button(gui, text = "8", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("8"))
-        b8.grid(row = 2, column = 1)
+        button8 = Button(gui, text = "8", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("8"))
+        button8.grid(row = 2, column = 1)
 
-        b9 = Button(gui, text = "9", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("9"))
-        b9.grid(row = 2, column = 2)
+        button9 = Button(gui, text = "9", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("9"))
+        button9.grid(row = 2, column = 2)
 
-        bMult = Button(gui, text = "*", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("*"))
-        bMult.grid(row = 2, column = 3)
+        buttonMult = Button(gui, text = "*", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("*"))
+        buttonMult.grid(row = 2, column = 3)
 
-        b4 = Button(gui, text = "4", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("4"))
-        b4.grid(row = 3, column = 0)
+        # third row
+        button4 = Button(gui, text = "4", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("4"))
+        button4.grid(row = 3, column = 0)
 
-        b5 = Button(gui, text = "5", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("5"))
-        b5.grid(row = 3, column = 1)
+        button5 = Button(gui, text = "5", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("5"))
+        button5.grid(row = 3, column = 1)
 
-        b6 = Button(gui, text = "6", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("6"))
-        b6.grid(row = 3, column = 2)
+        button6 = Button(gui, text = "6", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("6"))
+        button6.grid(row = 3, column = 2)
 
-        bSub = Button(gui, text = "-", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("-"))
-        bSub.grid(row = 3, column = 3)
+        buttonSub = Button(gui, text = "-", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("-"))
+        buttonSub.grid(row = 3, column = 3)
 
-        b1 = Button(gui, text = "1", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("1"))
-        b1.grid(row = 4, column = 0)
+        # fourth row
+        button1 = Button(gui, text = "1", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("1"))
+        button1.grid(row = 4, column = 0)
 
-        b2 = Button(gui, text = "2", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("2"))
-        b2.grid(row = 4, column = 1)
+        button2 = Button(gui, text = "2", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("2"))
+        button2.grid(row = 4, column = 1)
 
-        b3 = Button(gui, text = "3", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("3"))
-        b3.grid(row = 4, column = 2)
+        button3 = Button(gui, text = "3", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("3"))
+        button3.grid(row = 4, column = 2)
 
-        bAdd = Button(gui, text = "+", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("+"))
-        bAdd.grid(row = 4, column = 3)
+        buttonAdd = Button(gui, text = "+", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("+"))
+        buttonAdd.grid(row = 4, column = 3)
 
-        b0 = Button(gui, text = "0", width = 11, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("0"))
-        b0.grid(row = 5, column = 0, columnspan = 2)
+        # fifth row
+        button0 = Button(gui, text = "0", width = 11, height = 3, fg = "blue", command = lambda: self.buttonPress("0"))
+        button0.grid(row = 5, column = 0, columnspan = 2)
 
-        bDot = Button(gui, text = ".", width = 5, height = 3, fg = "blue",
-        command = lambda: self.buttonPress("."))
-        bDot.grid(row = 5, column = 2)
+        buttonDot = Button(gui, text = ".", width = 5, height = 3, fg = "blue", command = lambda: self.buttonPress("."))
+        buttonDot.grid(row = 5, column = 2)
 
-        bEquals = Button(gui, text = "=", width = 5, height = 3, fg = "blue",
-        command = lambda: self.evaluate())
-        bEquals.grid(row = 5, column = 3)
+        buttonEquals = Button(gui, text = "=", width = 5, height = 3, fg = "blue", command = lambda: self.evaluate())
+        buttonEquals.grid(row = 5, column = 3)
 
 
-#driver
+# driver
 root = Tk()
 calculator(root)
 root.mainloop()
